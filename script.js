@@ -1,10 +1,10 @@
 const quizData=[
   {
-    question:'How old is Florin',
-    a:'10',
-    b:'17',
-    c:'26',
-    d:'110',
+    question:'Who won the first T20 World Cup?',
+    a:'Sri Lanka',
+    b:'USA',
+    c:'INDIA',
+    d:'Australia',
     correct:'c'
   },
   {
@@ -16,11 +16,11 @@ const quizData=[
     correct:'d'
   },
   {
-    question:'Who is the President of US',
-    a:'Akshay',
-    b:'Donald Trump',
-    c:'Ivan Saldano',
-    d:'Mihai Andrei',
+    question:'How many times has India won the ICC World Cup',
+    a:'2',
+    b:'1',
+    c:'4',
+    d:'3',
     correct:'b'
   },
   {
@@ -47,11 +47,11 @@ const answerEls=document.querySelectorAll('.answer');
 
 const questionEl=document.getElementById('question');
 
-const a_text =document.getElementById('a_text');
-const b_text =document.getElementById('b_text');
-const c_text =document.getElementById('c_text');
-const d_text =document.getElementById('d_text');
-const submitBtn=document.getElementById('submit');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const d_text = document.getElementById('d_text');
+const submitBtn = document.getElementById('submit');
 
 
 let currentQuiz=0;
@@ -96,6 +96,7 @@ function deselectAnswers(){
 submitBtn.addEventListener('click',()=>{
 
   const answer= getSelected();
+  // console.log('the answer is '+ answer);
 
   if(answer)
   {
@@ -110,7 +111,8 @@ submitBtn.addEventListener('click',()=>{
     }
     else
     {
-      quiz.innerHTML=`<h2>You answerd correctly at ${score}/${quizData.length} question</h2> <button onclick='location.reload()'>Reload</button>`
+      quiz.innerHTML=`<h2>You answerd correctly at ${score}/${quizData.length} question</h2>
+       <button onclick='location.reload()'>Reload</button>`
     }
     }
 });
